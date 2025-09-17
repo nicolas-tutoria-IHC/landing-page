@@ -14,102 +14,100 @@ body {
 /* ----- HEADER ----- */
 
 .header {
-    position: fixed;
+    position: fixed; /* Fijo en la parte superior */
     top: 0; left: 0; right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    background-color: darkred;
+    height: 60px; /* Altura del header */
+    display: flex; /* Para alinear horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: space-between; /* Espacio entre logo y nav */
+    padding: 0 20px; /* Espaciado horizontal */
+    background-color: white; /* Color de fondo */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 /* Logo */
 
 .text-logo {
     font-size: 1.6rem; /* Tambien puede ser px (26px) */
-    font-weight: bold;
+    font-weight: bold; /* 400 normal, 700 negrita */
 }
 
 /* ----- NAV ----- */
 
 .nav-bar {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+    display: flex; /* Para alinear horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    gap: 24px; /* Espacio entre los elementos */
 }
 
 /* Lista de opciones */
 .nav-list {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+    display: flex; /* para alinear horizontalmente */
+    list-style: none; /* Quitar viñetas */
+    gap: 20px; /* Espacio entre los elementos */
 }
 
-/* Estilo de los enlaces
+/* Estilo de los enlaces*/
+
 .nav-list a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #374151;
-    position: relative;
-    transition: color .3s;
+    text-decoration: none; /* Quitar subrayado */
+    font-size: 1rem; /* Tambien puede ser px (16px) */
+    font-weight: 500; /* 400 normal, 700 negrita */
+    color: #000000; /* Color del texto */
+    position: relative; /* Para posicionar el pseudo-elemento */
+    transition: color .3s; /* Transición suave para el color */
 }
+
 
 .nav-list a::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #2563eb;
-    transition: width .3s;
+    content: ""; /* Elemento vacío */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: -6px; /* Debajo del texto */
+    left: 0; /* Alineado a la izquierda */
+    width: 0; /* Ancho inicial 0 */
+    height: 2px; /* Alto de la línea */
+    background: #2563eb; /* Color de la línea */
+    transition: width .3s; /* Transición suave para el ancho */
 }
 
+
 .nav-list a:hover {
-    color: #2563eb;
+    color: #2563eb; /* Cambia el color al pasar el ratón */
 }
 
 .nav-list a:hover::after {
-    width: 100%;
+    width: 100%; /* Ancho completo al pasar el ratón */
 }
-
-*/
-
-
-/* comportamiento al pasar el cursor */
-
 
 /* ========== SWITCH ==========*/
 
 .language-switch {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; /* Para alinear horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    gap: 8px; /* Espacio entre los elementos */
 }
 
 .lang-label {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.9rem; /* Tambien puede ser px (14px) */
+    font-weight: 500; /* 400 normal, 700 negrita */
 }
 
 
 /* Ocultar el input (Checkbox) */
 .lang-input {
-    position: absolute;
-    opacity: 0;
+    position: absolute; /* Sacar del flujo del documento */
+    opacity: 0; /* Hacer invisible */
 }
 
 /* Switch base */
 .switch {
-    width: 46px;
-    height: 24px;
-    background: #a5b1c5;
-    border-radius: 24px;
+    width: 46px; /* Ancho del switch */
+    height: 24px; /* Alto del switch */
+    background: #a5b1c5; /* Color de fondo cuando está desactivado */
+    border-radius: 24px; /* Bordes redondeados */
     position: relative; /* Para posicionar la perilla */
-    cursor: pointer;
-    transition: background .3s;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el switch */
+    transition: background .3s; /* Transición suave para el cambio de fondo */
 }
 
 /* Perilla */
@@ -118,22 +116,105 @@ body {
     position: absolute; /* Posicionamiento absoluto dentro del switch */
     top: 3px; /* Centrado verticalmente */
     left: 3px; /* Posición inicial a la izquierda */
-    width: 18px; /* Tamaño de la perilla */
-    height: 18px; /* Tamaño de la perilla */
-    background: #8c4747;
-    border-radius: 50%;
-    transition: transform .3s;
-    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    width: 18px; /* Ancho de la perilla */
+    height: 18px; /* Alto de la perilla */
+    background: #8c4747; /* Color de la perilla */
+    border-radius: 50%; /* Perilla redonda */
+    transition: transform .3s; /* Transición suave para el movimiento */
+    box-shadow: 0 1px 2px rgba(0,0,0,.2); /* Sombra para darle profundidad */
 }
 
 /* Estado activado */
 .lang-input:checked + .switch {
-    background: #2563eb;
+    background: #2563eb; /* Color de fondo cuando está activado */
 }
 
 .lang-input:checked + .switch::after {
-    transform: translateX(22px);
+    transform: translateX(22px); /* Mueve la perilla a la derecha */
 }
+
+
+/* ====================== SECTION HERO ====================== */
+
+main{
+    margin-top: 60px; /* Espacio para el header */
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* Altura total de la ventana menos el header */
+}
+
+
+.section-hero {
+    background: url(https://media.istockphoto.com/id/1467199060/es/foto/taza-de-caf%C3%A9-con-humo-y-granos-de-caf%C3%A9-sobre-fondo-de-madera-viejo.jpg?s=612x612&w=0&k=20&c=GUXcmyDshWXyNQzb0aOjQymU4nyXZZMPLRVRMEkeqP4=) center/cover no-repeat;
+    displey: flex; /* Para alinear horizontalmente */
+    height: 100%; /* Ocupa toda la altura de la ventana */
+    width: 100%; /* Ocupa todo el ancho */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    position: relative;
+    padding-top: 60px; /* Espacio para el header */
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 4rem; /* Tambien puede ser px (40px) */
+    padding-bottom: 20px; /* Espacio debajo del título */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; /* Tambien puede ser px (24px) */
+    padding-bottom: 20px; /* Espacio debajo del título */
+}
+
+.btn {
+    padding: 12px 24px; /* Espaciado interno */
+    border-radius: 6px; /* Bordes redondeados */
+    text-decoration: none; /* Quitar subrayado */
+    transition: background .3ms, transform .2s;
+}
+
+
+.btn-primary {
+    background: #C98968; /* Color de fondo */
+    color: white; /* Color del texto */
+    font-weight: 600; /* 400 normal, 700 negrita */
+}
+
+.btn-secondary {
+    background: #d0d5e0; /* Color de fondo */
+    color: #000000; /* Color del texto */
+    font-weight: 600; /* 400 normal, 700 negrita */
+    margin-left: 20px; /* Espacio entre los botones */
+}
+
+
+.btn-primary:hover {
+    background: #a2603e; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+.btn-secondary:hover {
+    background: #bb9682; /* Cambia el color al pasar el ratón */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
